@@ -14,17 +14,17 @@ export const employeesOptions = [
 ];
 
 export const industryOptions = [
-  <option key="AG Tech" value="AG Tech">AG Tech</option>,
-  <option key="Apparel" value="Apparel">Apparel</option>,
-  <option key="Deep Tech" value="Deep Tech">Deep Tech</option>,
-  <option key="EV" value="EV">EV</option>,
-  <option key="F&B" value="F&B">F&B</option>,
-  <option key="Fashion Beauty" value="Fashion Beauty">Fashion Beauty</option>,
-  <option key="Fin Tech" value="Fin Tech">Fin Tech</option>,
-  <option key="Health Care" value="Health Care">Health Care</option>,
-  <option key="Health Tech" value="Health Tech">Health Tech</option>,
-  <option key="SAAS" value="SAAS">SAAS</option>,
-  <option key="Others" value="Others">Others</option>,
+  <option key="CleanTech" value="CleanTech">CleanTech (Sustainability, Green Energy)</option>,
+  <option key="EdTech" value="EdTech">EdTech (Educational Technology)</option>,
+  <option key="E-commerce" value="E-commerce">E-commerce (Online Retail, Marketplaces)</option>,
+  <option key="Fintech" value="Fintech">Fintech (Financial Technology, Payment Solutions)</option>,
+  <option key="FoodTech" value="FoodTech">FoodTech (Alternative Food Sources, Delivery)</option>,
+  <option key="Gaming" value="Gaming">Gaming (Video Games, Virtual Reality)</option>,
+  <option key="Healthcare" value="Healthcare">Healthcare (Biotech, MedTech, HealthTech)</option>,
+  <option key="Logistics" value="Logistics">Logistics (Supply Chain, Transportation)</option>,
+  <option key="PropTech" value="PropTech">PropTech (Real Estate Technology)</option>,
+  <option key="SaaS" value="SaaS">SaaS (Software as a Service)</option>,
+  <option key="Technology" value="Technology">Technology (Software, AI, IoT, Blockchain)</option>
 ];
 
 export const geographyOptions = [
