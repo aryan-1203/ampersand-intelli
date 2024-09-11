@@ -124,3 +124,37 @@
     color: #879790;
     font-size: 14px;
   }
+
+  .login-input-container {
+    position: relative;
+    margin-bottom: 20px;
+  }
+  
+  .login-input-icon {
+    position: absolute;
+    top: 50%;
+    left: 10px; /* Adjust the position as needed */
+    transform: translateY(-50%);
+    width: 20px; /* Adjust size as needed */
+    height: 20px;
+    pointer-events: none; /* Prevents the icon from capturing mouse events */
+  }
+  
+  .login-input {
+    padding-left: 40px; /* Adjust padding to make room for the icon */
+  }
+  
+  .login-password-toggle {
+    position: absolute;
+    margin-top: -10px;
+    top: 50%;
+    right: 10px; /* Adjust the position as needed */
+    transform: translateY(-50%);
+    cursor: pointer;
+  }
+  
+  .login-password-toggle-icon {
+    width: 20px; /* Adjust size as needed */
+    height: 20px;
+  }
+  
