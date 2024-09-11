@@ -4,7 +4,6 @@ import ShareholderRow from "./ShareholderRow";
 import OwnershipBar from "./OwnershipBar";
 import Cookies from "js-cookie";
 import { shareholderOptions } from "./shareholderOptions";
-import html2canvas from "html2canvas";
 
 const OwnershipForm = ({ companyId, onNext, onBack }) => {
   const [shareholders, setShareholders] = useState([{ type: "", name: "", percentage: "", is_active: true, hasError: false }]);
@@ -33,10 +32,18 @@ const OwnershipForm = ({ companyId, onNext, onBack }) => {
   };
 
   const getTotalPercentage = () =>
-    shareholders.reduce((acc, curr) => acc + Number(curr.percentage), 0);
+    shareholders.reduce((acc, curr) => acc + Number(curr.percentage || 0), 0);
+
+  // Calculate the remaining percentage for dynamic placeholder
+  const getRemainingPercentage = (index) => {
+    const usedPercentage = shareholders
+      .slice(0, index)
+      .reduce((acc, curr) => acc + Number(curr.percentage || 0), 0);
+    return Math.max(100 - usedPercentage, 0);
+  };
 
   const saveDataToCookies = () => {
-    Cookies.set("shareholders", JSON.stringify(shareholders), { expires: 1 / 1440 }); // Expires in 1 minute
+    Cookies.set("shareholders", JSON.stringify(shareholders), { expires: 10 / 1440 }); // Expires in 1 minute
   };
 
   const handleContinue = () => {
@@ -65,6 +72,7 @@ const OwnershipForm = ({ companyId, onNext, onBack }) => {
           handleInputChange={handleInputChange}
           availableOptions={getAvailableOptions(shareholder.type)}
           hasError={shareholder.hasError}
+          placeholder={getRemainingPercentage(index)}  // Pass dynamic placeholder
         />
       ))}
 
