@@ -10,7 +10,8 @@ import Report from "./components/Report";
 import { shareholderOptions } from "../ownership-structure/components/shareholderOptions";
 import ParameterLevelComponent from "./components/InvestmentReadiness";
 import InvestmentReadiness from "./components/UniqueInvestmentReadiness";
-// import html2pdf from 'html2pdf.js';
+import html2canvas from "html2canvas";
+import jsPDF from "jspdf";
 
 const ReportPage = () => {
   const [currentStep, setCurrentStep] = useState(5);
@@ -33,21 +34,19 @@ const ReportPage = () => {
     }
   }, []);
 
-  const handlePrint = () => {
-    window.print();
+  const handleDownload = () => {
+    const element = document.querySelector(".company-overview-page"); // Select the entire content
+    html2canvas(element, { scale: 2 }).then((canvas) => {
+      const imgData = canvas.toDataURL("image/png");
+      const pdf = new jsPDF({
+        orientation: "portrait", // Set orientation to landscape
+        unit: "px",
+        format: [canvas.width, canvas.height], // Adjust the format to match screen size
+      });
+      pdf.addImage(imgData, "PNG", 0, 0, canvas.width, canvas.height);
+      pdf.save("report.pdf"); // Save as PDF
+    });
   };
-
-  // const handleDownload = () => {
-  //   const element = document.querySelector(".d-flex contact-form-center"); // Select the element to convert to PDF
-  //   const opt = {
-  //     margin:       1,
-  //     filename:     'report.pdf',
-  //     image:        { type: 'jpeg', quality: 0.98 },
-  //     html2canvas:  { scale: 2 },
-  //     jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
-  //   };
-  //   html2pdf().from(element).set(opt).save();
-  // };
 
   return (
     <>
@@ -79,7 +78,7 @@ const ReportPage = () => {
             </Col>
             <Col className="contact-form-col d-flex justify-content-start " lg={7}>
               <div className="contact-content-form w-100">
-                <div className="d-flex contact-form-center" style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
+                <div className="d-flex contact-form-center" style={{ display: "flex", alignItems: "start", justifyContent: "start" }}>
                   <div className="card">
                     <div className="card-body">
                       <div className="report-heading">
@@ -130,7 +129,7 @@ const ReportPage = () => {
                           </div>
                         </section>
                       </div>
-                      <Button id="continue" className="btn-dark w-100 mt-3" onClick={handlePrint}>
+                      <Button style={{ color: "black", fontWeight : 600 }} id="continue" className="btn-dark w-100 mt-3" onClick={handleDownload}>
                         Share Report
                       </Button>
                     </div>
