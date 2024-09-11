@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
 
-const ShareholderRow = ({ shareholder, index, handleInputChange, availableOptions, hasError }) => {
+const ShareholderRow = ({ shareholder, index, handleInputChange, availableOptions, hasError, placeholder }) => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
-  // Automatically assign the first available option if no type is selected
   useEffect(() => {
     if (!shareholder.type && availableOptions.length > 0) {
       handleInputChange(index, "type", availableOptions[0].value);  // Set to first available option
@@ -60,7 +59,7 @@ const ShareholderRow = ({ shareholder, index, handleInputChange, availableOption
       )}
       <input
         type="text"
-        placeholder="33%"
+        placeholder={`${placeholder}%`}  // Dynamic placeholder
         className={`percentage-input ${hasError ? "input-error" : ""}`}
         value={shareholder.percentage}
         onChange={(e) => handleInputChange(index, "percentage", e.target.value)}
