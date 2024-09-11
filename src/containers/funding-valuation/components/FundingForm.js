@@ -22,16 +22,17 @@ const FundingForm = ({ data, onNext, onBack }) => {
       raisedToDate: data.raisedToDate || "",
       currency: data.currency || "USD",
       amountRaised: data.amountRaised || "",
-      amountUnit: data.amountUnit || "K",
+      amountUnit: data.amountUnit || "Th",
       lastValuation: data.lastValuation || "",
       lvcurrency: data.lvcurrency || "USD",
-      lvamountUnit: data.lvamountUnit || "K",
+      lvamountUnit: data.lvamountUnit || "Th",
       currentValuation: data.currentValuation || "",
-      cvamountUnit: data.cvamountUnit || "K",
+      cvamountUnit: data.cvamountUnit || "Th",
       capitalRequirements: data.capitalRequirements || "",
       crcurrency: data.crcurrency || "USD",
+      cramountUnit: data.cramountUnit || "Th",
     },
-    // validationSchema,
+    validationSchema,
     validateOnChange: false,
     validateOnBlur: false,
     onSubmit: (values) => {
@@ -41,7 +42,7 @@ const FundingForm = ({ data, onNext, onBack }) => {
         raisedToDate: `${values.currency} ${values.amountRaised} ${values.amountUnit}`,
         lastValuation: `${values.lvcurrency} ${values.lastValuation} ${values.lvamountUnit}`,
         currentValuation: `${values.lvcurrency} ${values.currentValuation} ${values.cvamountUnit}`,
-        capitalRequirements: `${values.crcurrency} ${values.capitalRequirements} ${values.amountUnit}`,
+        capitalRequirements: `${values.crcurrency} ${values.capitalRequirements} ${values.cramountUnit}`,
       };
 
       Cookies.set('fundingValuationFormData', JSON.stringify(formattedValues));
