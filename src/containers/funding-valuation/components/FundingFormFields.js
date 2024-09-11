@@ -50,9 +50,9 @@ const AmountUnitSelect = ({ id, name, value, onChange, error }) => (
             name={name}
             value={value}
             onChange={onChange}
-            style={{ height: "100%", width: "74px", paddingRight: "30px" }}
+            style={{ height: "100%", width: "80px", paddingRight: "30px" }}
         >
-            {["K", "Mn", "Bn", "Tn"].map((unit) => (
+            {["Th", "Mn"].map((unit) => (
                 <option key={unit} value={unit}>
                     {unit}
                 </option>
@@ -89,7 +89,7 @@ const FundingFormFields = ({ formik }) => (
                     value={formik.values.stage}
                     onChange={formik.handleChange}
                 >
-                    {["Pre-Seed", "Seed", "Beyond"].map((stage) => (
+                    {["Pre-Seed", "Seed", "Bridging", "Series A", "Series B", "Secondary", "Venture Debt"].map((stage) => (
                         <option key={stage} value={stage}>
                             {stage}
                         </option>
@@ -279,9 +279,9 @@ const FundingFormFields = ({ formik }) => (
                         style={{ paddingRight: "80px" }}
                     />
                     <AmountUnitSelect
-                        id="amountUnit"
-                        name="amountUnit"
-                        value={formik.values.amountUnit}
+                        id="cramountUnit"
+                        name="cramountUnit"
+                        value={formik.values.cramountUnit}
                         onChange={formik.handleChange}
                         error={formik.errors.amountUnit}
                     />
