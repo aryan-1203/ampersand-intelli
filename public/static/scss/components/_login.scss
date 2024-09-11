@@ -1,0 +1,126 @@
+.login-page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-image: url('../../../image/Login\ bg.jpg'); /* Replace with your actual background image */
+    background-size: cover;
+    background-position: center;
+  }
+  
+  /* Header section */
+  .login-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+  }
+  
+  .login-logo {
+    width: 50px;
+    height: 30px;
+  }
+  
+  .login-header-text {
+    font-size: 24px;
+    color: #fff;
+    align-self: center;
+  }
+  
+  /* Central login container */
+  .login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+  }
+  
+  .login-container-logo {
+    width: 150px;
+    margin-bottom: 20px;
+  }
+  
+  /* Form styling */
+  .login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+    border-radius: 10px;
+  }
+  
+  .login-heading {
+    font-size: 40px;
+    margin-bottom: 5px;
+    color: #fff;
+  }
+  
+  .login-subtext {
+    font-size: 16px;
+    margin-bottom: 30px;
+    color: #879790;
+  }
+  
+  .login-label {
+    align-self: flex-start;
+    margin-bottom: 5px;
+    color: #fff;
+  }
+  
+  .login-input {
+    display: flex;
+    align-items: center;
+    background-color: #2c2c2c; /* Matches the background color */
+    border-radius: 6px;
+    padding: 10px;
+    width: 350px;
+    margin-bottom: 15px;
+    color: #fff;
+  }
+  
+  .login-username {
+    margin-bottom: 15px;
+  }
+  
+  .login-password-container {
+    position: relative;
+    width: 100%;
+  }
+  
+  .login-password {
+    width: 100%;
+  }
+  
+  .login-password-toggle {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+  }
+  
+  .login-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #c7f83f;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+    color: #1d201f;
+    font-size: 16px;
+    font-weight: 600;
+  }
+  
+  .login-button:hover {
+    background-color: #ffffff;
+  }
+  
+  /* Footer styling */
+  .login-footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #1D201F99;
+    color: #879790;
+    font-size: 14px;
+  }
