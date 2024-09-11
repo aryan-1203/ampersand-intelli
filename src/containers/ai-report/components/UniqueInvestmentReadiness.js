@@ -21,14 +21,16 @@ function InvestmentReadiness() {
 
   const getInvestmentTypeText = (score) => {
     if (score >= 80) {
-      return "Ideal for Buy-out";
+      return "Exceptional Result";
+    } else if (score >= 60) {
+      return "Strong Performance";
     } else if (score >= 50) {
-      return "Good Potential";
+      return "Moderate Risk";
     } else {
-      return "Not Ideal";
+      return "Low Potential";
     }
   };
-
+  
   return (
     <section className="investment-readiness-container">
       <div className="investment-score-wrapper">
