@@ -52,7 +52,7 @@ const OverviewFundingCards = () => {
       </div>
       <div className="of-card">
         <p id="report-h">Raised to Date</p>
-        <p id="report-p">{fundingData.raisedToDate || "USD 20 K"}</p>
+        <p id="report-p">{fundingData.raisedToDate || "USD 20 Th"}</p>
       </div>
       <div className="of-card">
         <p id="report-h">Last Valuation</p>
@@ -64,7 +64,7 @@ const OverviewFundingCards = () => {
       </div>
       <div className="of-card">
         <p id="report-h">Capital Requirements</p>
-        <p id="report-p">{fundingData.capitalRequirements || "USD 500 K"}</p>
+        <p id="report-p">{fundingData.capitalRequirements || "USD 500 Th"}</p>
       </div>
     </div>
   );
