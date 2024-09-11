@@ -91,7 +91,7 @@ const Report = () => {
   }, []);
 
   if (scores === null) {
-    return <div>Loading...</div>; // Display loading while data is being retrieved
+    return <div>Loading...</div>;
   }
 
   return (
