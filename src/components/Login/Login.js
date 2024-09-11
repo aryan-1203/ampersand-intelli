@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useRouter } from "next/router";
-import Cookies from 'js-cookie';
+import Cookies from "js-cookie";
 
 const LoginPage = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -11,9 +11,8 @@ const LoginPage = () => {
   };
 
   const handleLogin = () => {
-    // Simulate authentication process
-    Cookies.set('isLoggedIn', 'true', { expires: 1 }); // Expires in 1 day
-    router.push('/'); // Redirect to home after successful login
+    Cookies.set("isLoggedIn", "true", { expires: 1 }); // Expires in 1 day
+    router.push("/"); // Redirect to home after successful login
   };
 
   return (
@@ -24,54 +23,63 @@ const LoginPage = () => {
           alt="Company Logo"
           className="login-logo"
         />
-        <div className="login-header-text">Ampersand Intelligence</div>
+        <div className="text-icon-container">
+      <img
+        src="image/gradialLine.png" // Replace with the image you want to add
+        alt="Icon"
+        className="header-icon"
+      />
+      <div className="login-header-text">Ampersand Intelligence</div>
+    </div>
       </header>
-
       <div className="login-container">
         <div className="login-form">
-          <h2 className="login-heading">Welcome Back!</h2>
+          <h2 className="login-heading">Welcome back</h2>
           <p className="login-subtext">Please enter your details to sign in</p>
 
-          <label htmlFor="username" className="login-label">
-            <img
-              src="image/UserOutline.png" // Replace with your actual person icon path
-              alt="Username Icon"
-              className="login-icon"
-            />
-            Username
-          </label>
-          <input
-            type="text"
-            id="username"
-            placeholder="Enter your username"
-            className="login-input login-username"
-          />
-
-          <label htmlFor="password" className="login-label">
-            <img
-              src="image/tabler-icon-lock.png" // Replace with your actual lock icon path
-              alt="Password Icon"
-              className="login-icon"
-            />
-            Password
-          </label>
-          <div className="login-password-container">
-            <input
-              type={showPassword ? "text" : "password"}
-              id="password"
-              placeholder="Enter your password"
-              className="login-input login-password"
-            />
-            <span
-              className="login-password-toggle"
-              onClick={togglePasswordVisibility}
-            >
+          <div className="login-input-container">
+            <label htmlFor="username" className="login-label">
+              Username
+            </label>
+            <div className="login-input-wrapper">
               <img
-                src={showPassword ? "image/eye-off.png" : "image/eye.png"}
-                alt={showPassword ? "Hide Password" : "Show Password"}
-                className="login-password-toggle-icon"
+                src="image/UserOutline.png" // Replace with your actual user icon
+                alt="Username Icon"
+                className="login-input-icon"
               />
-            </span>
+              <input
+                type="text"
+                id="username"
+                placeholder="Enter your username"
+                className="login-input"
+              />
+            </div>
+          </div>
+
+          <div className="login-input-container">
+            <label htmlFor="password" className="login-label">
+              Password
+            </label>
+            <div className="login-input-wrapper">
+              <img
+                src="image/tabler-icon-lock.png" // Replace with your actual lock icon
+                alt="Password Icon"
+                className="login-input-icon"
+              />
+              <input
+                type={showPassword ? "text" : "password"}
+                id="password"
+                placeholder="Enter your password"
+                className="login-input"
+              />
+              <span className="login-password-toggle" onClick={togglePasswordVisibility}>
+                <img
+                  src={showPassword ? "image/eye-off.png" : "image/eye.png"} // Replace with your actual eye icon
+                  alt={showPassword ? "Hide Password" : "Show Password"}
+                  className="login-password-toggle-icon"
+                />
+              </span>
+            </div>
           </div>
 
           <button className="login-button" onClick={handleLogin}>
@@ -79,10 +87,10 @@ const LoginPage = () => {
           </button>
         </div>
       </div>
-
-      <footer className="login-footer">
-        All rights reserved. Ampersand VC
-      </footer>
+      <div>
+            <img className="gradient" src="image/gradient.png" />
+          </div>
+      <footer className="login-footer">All rights reserved. Ampersand VC</footer>
     </div>
   );
 };
