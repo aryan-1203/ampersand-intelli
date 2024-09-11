@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useRouter } from "next/router"; // Import useNavigate from React Router
+import { useRouter } from "next/router";
 import Cookies from 'js-cookie';
 
 const LoginPage = () => {
@@ -33,6 +33,11 @@ const LoginPage = () => {
           <p className="login-subtext">Please enter your details to sign in</p>
 
           <label htmlFor="username" className="login-label">
+            <img
+              src="image/UserOutline.png" // Replace with your actual person icon path
+              alt="Username Icon"
+              className="login-icon"
+            />
             Username
           </label>
           <input
@@ -43,6 +48,11 @@ const LoginPage = () => {
           />
 
           <label htmlFor="password" className="login-label">
+            <img
+              src="image/tabler-icon-lock.png" // Replace with your actual lock icon path
+              alt="Password Icon"
+              className="login-icon"
+            />
             Password
           </label>
           <div className="login-password-container">
@@ -56,7 +66,11 @@ const LoginPage = () => {
               className="login-password-toggle"
               onClick={togglePasswordVisibility}
             >
-              {showPassword ? "🙈" : "👁️"}
+              <img
+                src={showPassword ? "image/eye-off.png" : "image/eye.png"}
+                alt={showPassword ? "Hide Password" : "Show Password"}
+                className="login-password-toggle-icon"
+              />
             </span>
           </div>
 
