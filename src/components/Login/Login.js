@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useRouter } from "next/router"; // Import useNavigate from React Router
+import Cookies from 'js-cookie';
 
 const LoginPage = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -10,9 +11,9 @@ const LoginPage = () => {
   };
 
   const handleLogin = () => {
-    // Add your login logic here (e.g., form validation or API request)
-    // If login is successful, navigate to the home route
-    router.push("/"); // Use router.push to navigate to the home page
+    // Simulate authentication process
+    Cookies.set('isLoggedIn', 'true', { expires: 1 }); // Expires in 1 day
+    router.push('/'); // Redirect to home after successful login
   };
 
   return (
