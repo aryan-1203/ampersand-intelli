@@ -5,9 +5,9 @@
   "author": "Aryan",
   "license": "VIT",
   "scripts": {
-    "dev": "cross-env NODE_ENV=development next dev -p 3002",
+    "dev": "cross-env NODE_ENV=development next dev -p 4321",
     "build": "next build",
-    "start": "next start -p 3002",
+    "start": "next start -p 4321",
     "test:unit": "cross-env NODE_ENV=test jest --coverage",
     "test": "npm run test:unit",
     "test:watch": "cross-env NODE_ENV=test jest --watchAll",
