@@ -33,7 +33,7 @@ const OverviewForm = ({ data, onNext }) => {
 
   const formik = useFormik({
     initialValues: data,
-    // validationSchema,
+    validationSchema,
     validateOnChange: false,
     validateOnBlur: false,
     onSubmit: (values) => {
