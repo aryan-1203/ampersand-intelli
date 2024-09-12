@@ -1,0 +1,185 @@
+.parametric-scoring-container {
+  padding: 20px;
+  padding-left: 50px;
+  padding-right: 50px;
+  width: 100%;
+  margin: 0;
+  max-width: 620px;
+  background-color: transparent;
+  border: none;
+
+  @media (min-width: 1250px) and (max-width: 1600.99px) {
+    max-width: calc(
+      620px + (100vw - 1250px) * 0.6
+    ); /* Adjust the rate (0.3) as needed */
+  }
+
+  @media (min-width: 1601px) and (max-width: 2750px) {
+    max-width: calc(
+      620px + (100vw - 1250px) * 0.5
+    ); /* Adjust the rate (0.3) as needed */
+  }
+
+  .parametric-title {
+    color: #ffff;
+    font-size: 32px;
+    font-weight: 400;
+  }
+
+  .parametric-subtitle {
+    font-weight: 400;
+    color: #879790;
+    size: 16px;
+  }
+
+  .parametric-row {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 50px;
+    padding: 10px 0;
+    border-bottom: 1px solid #444;
+
+    .row-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      margin-bottom: 5px;
+
+      .parametric-label {
+        flex: 2;
+        h3 {
+          color: #ffff;
+          font-size: 15px;
+          font-weight: 400;
+          margin: 0;
+        }
+      }
+
+      .parametric-slider {
+        flex: 3;
+        position: relative;
+        padding: 0 10px;
+
+        .slider-container {
+          position: relative;
+          width: 100%;
+
+          .tooltip-container {
+            position: absolute;
+            top: -50px;
+            width: 95%;
+            display: flex;
+            z-index: 0;
+            justify-content: space-between;
+            pointer-events: none; /* Avoid interfering with the slider */
+
+            .tooltip {
+              position: absolute;
+              padding: 5px 16px;
+              background-color: #7041da;
+              color: white;
+              font-size: 0.85rem;
+              border-radius: 6px;
+              box-shadow: 0px 3px 0px 0px #000000;
+              opacity: 0.001;
+              transition: opacity 0.3s ease, transform 0.3s ease, left 0.3s ease;
+
+              @media (min-width: 992px) and (max-width: 1250px) {
+                padding: 4px 13px;
+                font-size: 14px;
+              }
+
+              &::after {
+                content: "";
+                position: absolute;
+                bottom: -14px;
+                left: 50%;
+                transform: translateX(-50%);
+                border-width: 8px;
+                border-style: solid;
+                border-color: #7041da transparent transparent transparent;
+              }
+            }
+
+            .tooltip.active {
+              opacity: 1;
+            }
+          }
+
+          input[type="range"] {
+            width: 100%;
+            height: 6px;
+            -webkit-appearance: none;
+            background: linear-gradient(to right, #57605c 0%, #57605c 100%),
+              repeating-linear-gradient(
+                to right,
+                #879790 0%,
+                #879790 4px,
+                transparent 4px,
+                transparent 10%
+              );
+            background-size: 100% 100%, 100% 4px;
+            border-radius: 18px;
+            outline: none;
+            position: relative;
+
+            &::-webkit-slider-runnable-track {
+              width: 100%;
+              height: 4px;
+              background-color: transparent;
+              cursor: pointer;
+            }
+
+            &::-webkit-slider-thumb {
+              -webkit-appearance: none;
+              appearance: none;
+              width: 20px;
+              height: 20px;
+              border-radius: 50%;
+              background: white;
+              cursor: pointer;
+              margin-top: -8px;
+            }
+
+            &::-moz-range-thumb {
+              width: 20px;
+              height: 20px;
+              border-radius: 50%;
+              background: white;
+              cursor: pointer;
+            }
+
+            &::-ms-thumb {
+              width: 20px;
+              height: 20px;
+              border-radius: 50%;
+              background: white;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+
+      .parametric-value {
+        flex: 1;
+        text-align: right;
+        input {
+          width: 60px;
+          text-align: center;
+          padding: 8px;
+          border-radius: var(--Typo-Radius-Small, 4px);
+          border: 1px solid var(--Neutrals-700, #57605c);
+          background: #2c302e;
+          color: white;
+          font-size: 1rem;
+        }
+      }
+    }
+    .parametric-subtext {
+      color: #879790;
+      font-size: 12px;
+      margin-top: 5px;
+    }
+  }
+}

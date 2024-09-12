@@ -1,0 +1,322 @@
+.ownership-structure-container {
+    padding-top: 20px;
+    padding-left: 50px;
+    padding-right: 50px;
+    width: 100%;
+    margin: 0;
+    max-width: 620px;
+    background-color: transparent;
+    border: none;
+
+    @media (min-width: 1250px) and (max-width: 1600.99px) {
+      max-width: calc(620px + (100vw - 1250px) * 0.6); /* Adjust the rate (0.3) as needed */
+  }
+
+  @media (min-width: 1601px) and (max-width: 2750px) {
+    max-width: calc(620px + (100vw - 1250px) * 0.5); /* Adjust the rate (0.3) as needed */
+}
+
+.input-error {
+  border-color: red;
+  background-color: #ffefef; /* Light red background to indicate error */
+}
+
+.custom-dropdown {
+  position: relative;
+  width: 100%;
+  background-color: #2c302e;
+  color: white;
+  border: 1px solid #57605c;
+  border-radius: 5px;
+  padding: 8px;
+  cursor: pointer;
+}
+
+.custom-dropdown .selected-option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Ensures equal spacing */
+  height: 100%;
+}
+
+.custom-dropdown .color-box {
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+  margin-right: 12px;
+  margin-left: 8px;
+}
+
+.custom-dropdown .shareholder-option {
+  flex-grow: 1;
+}
+
+.custom-dropdown .vector-icon {
+  font-size: 16px;
+}
+.dropdown-options {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: #2c302e;
+  border: 1px solid #57605c;
+  border-radius: 5px;
+  z-index: 10;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown-option {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.dropdown-option:hover {
+  background-color: #404442;
+}
+
+.custom-dropdown.open .dropdown-options {
+  display: block;
+}
+
+.founder-color {
+  background-color: white;
+  border: 1px solid #555;
+}
+
+.family-color {
+  background-color: #7041DA;
+}
+
+.angel-color {
+  background-color: #FF5402;
+}
+
+.vc-color {
+  background-color: #C7F83F;
+}
+
+.esops-color {
+  background-color: #00AD65;
+}
+
+.others-color {
+  background-color: #57605C;
+}
+
+  
+    .ownership-title {
+      color: #ffff;
+      font-size: 32px;
+      font-weight: 400;
+    }
+  
+    .ownership-subtitle {
+    //   margin-bottom: 30px;
+      color: #879790;
+      size: 16px;
+    }
+  
+    .ownership-bar-container {
+      display: flex;
+      border-radius: 7px;
+      overflow: hidden;
+      height: 54px;
+      margin-bottom: 20px;
+      position: relative;
+      gap: 4.3px;
+    }
+  
+    .bar-section {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      color: black;
+      font-size: 0.9rem;
+      font-weight: bold;
+      padding: 5px;
+  
+      .bar-text {
+        position: absolute;
+        font-size: 0.9rem;
+        font-weight: bold;
+        text-align: center;
+        width: 100%;
+      }
+    }
+  
+    .founder-color {
+      background-color: white;
+      color: black;
+    }
+  
+    .family-color {
+      background-color: #7041DA;
+      color: white;
+    }
+  
+    .angel-color {
+      background-color:#FF5402;
+      color: white;
+    }
+  
+    .vc-color {
+      background-color: #C7F83F;
+      color: black;
+    }
+  
+    .esops-color {
+      background-color: #00AD65;
+      color: black;
+    }
+  
+    .others-color {
+      background-color: #57605C;
+      color: white;
+    }
+  
+    @media (min-width: 992px) and (max-width: 1250px) {
+    .label-row{
+      
+        display: none;
+    }
+    }
+    .ownership-form-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      margin-bottom: 15px;
+      width: 100%;
+      position: relative;
+  
+      /* Add border-bottom for the divider line */
+      &:not(:last-child)::after {
+        content: "";
+        position: absolute;
+        bottom: -10px; /* Space between rows */
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background-color: #57605C; /* Divider line color */
+      }
+  
+      @media (min-width: 992px) and (max-width: 1250px) {
+        flex-direction: column; /* Stack the input fields vertically for smaller screens */
+        margin-bottom: 50px; /* Add more space between rows */
+        margin-top: 70px;
+        
+        &:not(:last-child)::after {
+          bottom: -25px; /* Adjust space between rows */
+        }
+      }
+        @media (max-width: 991.98px) {
+          &:not(:last-child)::after {
+            display: none;
+          }
+        }
+          @media (min-width: 1251px) {
+            &:not(:last-child)::after {
+              display: none;
+            }
+      }    
+      .custom-dropdown {
+        flex: 5; /* Dropdown takes normal space */
+      }
+    
+      .ownership-input {
+        flex: 5; /* More space for Shareholder Name */
+        min-width: 150px; /* Ensure it doesn't shrink too much */
+      }
+    
+      .percentage-input {
+        flex: 1; /* Reduce space for Holding (%) */
+        min-width: 100px; /* Ensure it doesn't get too narrow */
+      }
+    }
+    
+    
+    .ownership-dropdown, .ownership-input, .percentage-input {
+      padding: 10px;
+      height: 54px;
+      border-radius: 5px;
+      border: 1px solid #57605C;
+      background-color: #2C302E;
+      color: white;
+      font-size: 16px;
+      box-sizing: border-box; /* Include padding and borders in the width */
+    }
+    
+    /* Media query to adjust further for larger screens */
+    @media (min-width: 1250px) {
+      .ownership-form-row {
+        .ownership-input {
+          flex: 7; /* More space for Shareholder Name on larger screens */
+        }
+    
+        .percentage-input {
+          flex: 0.15; /* Further reduce the space for Holding (%) */
+        }
+      }
+    }
+  
+    .add-shareholder-button {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      margin-top: 15px;
+      background-color: #222524;
+      border: 2px dashed #57605C;
+      border-radius: 5px;
+      color: #879790;
+      font-size: 16px;
+      cursor: pointer;
+      transition: color 0.3s ease, border 0.3s ease; /* Smooth transition for color and border */
+    
+      &:hover {
+        color: white; /* Change text color to white on hover */
+        border: 2px solid #57605C; /* Change dashed border to solid on hover */
+      }
+    }
+    
+  
+    .error-message-container {
+      width: 100%;
+      background-color: #C436171A; /* Semi-transparent red */
+      display: flex;
+      height: 50px;
+      // align-items: center;
+      justify-content: center;
+      padding: 10px;
+      border-radius: 5px;
+      box-sizing: border-box; /* Ensures padding is included in the width */
+      margin-top: 15px;
+      position: relative;
+
+      @media (min-width: 992px) and (max-width: 1250px) {
+        height: 70px; /* Stack the input fields vertically for smaller screens */
+      }
+    }
+    
+    .warning-icon {
+      height: 15px; /* Set icon height to align with text */
+      margin-right: 10px; /* Space between icon and text */
+      margin-top: 5px;
+    }
+    
+    .error-message-text {
+      color: #EB7156; /* Red text color */
+      font-size: 16px;
+      font-weight: 400;
+      text-align: center;
+    }
+    
+  }
+
+  

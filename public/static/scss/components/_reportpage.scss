@@ -1,0 +1,673 @@
+.report-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #57605c4d;
+
+  @media screen and (min-width: 1200px) {
+    width: 100%;
+    background-color: #1d201f;
+    z-index: 1;
+  }
+
+  .title-section {
+    h2 {
+      color: var(--Essentials-White, #fff);
+      font-family: "Rethink Sans";
+      font-size: 32px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 40px; /* 125% */
+      letter-spacing: -0.8px;
+
+      span.icon {
+        color: var(--Neutrals-700, #57605c);
+      }
+    }
+    p {
+      color: var(--Neutrals-500, #879790);
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 22px; /* 137.5% */
+    }
+  }
+
+  .company-code {
+    margin-top: -20px;
+    text-align: right;
+
+    p {
+      margin: 10px;
+      font-size: 16px;
+      color: #fff;
+      font-weight: 400;
+    }
+
+    .code {
+      color: var(--Neutrals-700, #57605c);
+      text-align: right;
+
+      /* Heading/H2 */
+      font-family: "Rethink Sans";
+      font-size: 40px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 48px; /* 120% */
+      letter-spacing: -1px;
+    }
+  }
+}
+
+.report-ownership-structure-container {
+  padding-top: 20px;
+  // padding-left: 50px;
+  // padding-right: 50px;
+  width: 100%;
+  margin: 0;
+  // max-width: 620px;
+  background-color: transparent;
+  border: none;
+
+  .input-error {
+    border-color: red;
+    background-color: #ffefef; /* Light red background to indicate error */
+  }
+
+  .custom-dropdown {
+    position: relative;
+    width: 100%;
+    background-color: #2c302e;
+    color: white;
+    border: 1px solid #57605c;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+  }
+
+  .custom-dropdown .selected-option {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Ensures equal spacing */
+    padding: 0 10px;
+    height: 100%;
+  }
+
+  .custom-dropdown .color-box {
+    width: 16px;
+    height: 16px;
+    border-radius: 4px;
+    margin-right: 15px;
+  }
+
+  .custom-dropdown .shareholder-option {
+    flex-grow: 1;
+  }
+
+  .custom-dropdown .vector-icon {
+    font-size: 16px;
+  }
+  .dropdown-options {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #2c302e;
+    border: 1px solid #57605c;
+    border-radius: 5px;
+    z-index: 10;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  .dropdown-option {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+  }
+
+  .dropdown-option:hover {
+    background-color: #404442;
+  }
+
+  .custom-dropdown.open .dropdown-options {
+    display: block;
+  }
+
+  .founder-color {
+    background-color: white;
+    border: 1px solid #555;
+  }
+
+  .family-color {
+    background-color: #7041da;
+  }
+
+  .angel-color {
+    background-color: #ff5402;
+  }
+
+  .vc-color {
+    background-color: #c7f83f;
+  }
+
+  .esops-color {
+    background-color: #00ad65;
+  }
+
+  .others-color {
+    background-color: #57605c;
+  }
+
+  .ownership-title {
+    color: #ffff;
+    font-size: 32px;
+    font-weight: 400;
+  }
+
+  .ownership-subtitle {
+    //   margin-bottom: 30px;
+    color: #879790;
+    size: 16px;
+  }
+
+  .ownership-bar-container {
+    display: flex;
+    border-radius: 7px;
+    overflow: hidden;
+    height: 54px;
+    margin-bottom: 20px;
+    position: relative;
+    gap: 4.3px;
+  }
+
+  .bar-section {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    color: black;
+    font-size: 0.9rem;
+    font-weight: bold;
+    padding: 5px;
+
+    .bar-text {
+      position: absolute;
+      font-size: 0.9rem;
+      font-weight: bold;
+      text-align: center;
+      width: 100%;
+    }
+  }
+
+  .founder-color {
+    background-color: white;
+    color: black;
+  }
+
+  .family-color {
+    background-color: #7041da;
+    color: white;
+  }
+
+  .angel-color {
+    background-color: #ff5402;
+    color: white;
+  }
+
+  .vc-color {
+    background-color: #c7f83f;
+    color: black;
+  }
+
+  .esops-color {
+    background-color: #00ad65;
+    color: black;
+  }
+
+  .others-color {
+    background-color: #57605c;
+    color: white;
+  }
+
+  @media (min-width: 992px) and (max-width: 1250px) {
+    .label-row {
+      display: none;
+    }
+  }
+  .ownership-form-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 15px;
+    width: 100%;
+    position: relative;
+
+    /* Add border-bottom for the divider line */
+    &:not(:last-child)::after {
+      content: "";
+      position: absolute;
+      bottom: -10px; /* Space between rows */
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background-color: #57605c; /* Divider line color */
+    }
+
+    @media (min-width: 992px) and (max-width: 1250px) {
+      flex-direction: column; /* Stack the input fields vertically for smaller screens */
+      margin-bottom: 50px; /* Add more space between rows */
+      margin-top: 70px;
+
+      &:not(:last-child)::after {
+        bottom: -25px; /* Adjust space between rows */
+      }
+    }
+    @media (max-width: 991.98px) {
+      &:not(:last-child)::after {
+        display: none;
+      }
+    }
+    @media (min-width: 1251px) {
+      &:not(:last-child)::after {
+        display: none;
+      }
+    }
+    .custom-dropdown {
+      flex: 4; /* Dropdown takes normal space */
+    }
+
+    .ownership-input {
+      flex: 5; /* More space for Shareholder Name */
+      min-width: 150px; /* Ensure it doesn't shrink too much */
+    }
+
+    .percentage-input {
+      flex: 1; /* Reduce space for Holding (%) */
+      min-width: 100px; /* Ensure it doesn't get too narrow */
+    }
+  }
+
+  .ownership-dropdown,
+  .ownership-input,
+  .percentage-input {
+    padding: 10px;
+    height: 54px;
+    border-radius: 5px;
+    border: 1px solid #57605c;
+    background-color: #2c302e;
+    color: white;
+    font-size: 16px;
+    box-sizing: border-box; /* Include padding and borders in the width */
+  }
+
+  /* Media query to adjust further for larger screens */
+  @media (min-width: 1250px) {
+    .ownership-form-row {
+      .ownership-input {
+        flex: 7; /* More space for Shareholder Name on larger screens */
+      }
+
+      .percentage-input {
+        flex: 0.15; /* Further reduce the space for Holding (%) */
+      }
+    }
+  }
+
+  .add-shareholder-button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 15px;
+    background-color: #222524;
+    border: 2px dashed #57605c;
+    border-radius: 5px;
+    color: #879790;
+    font-size: 16px;
+    cursor: pointer;
+    transition: color 0.3s ease, border 0.3s ease; /* Smooth transition for color and border */
+
+    &:hover {
+      color: white; /* Change text color to white on hover */
+      border: 2px solid #57605c; /* Change dashed border to solid on hover */
+    }
+  }
+
+  .error-message-container {
+    width: 100%;
+    background-color: #c436171a; /* Semi-transparent red */
+    display: flex;
+    height: 50px;
+    // align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border-radius: 5px;
+    box-sizing: border-box; /* Ensures padding is included in the width */
+    margin-top: 15px;
+    position: relative;
+
+    @media (min-width: 992px) and (max-width: 1250px) {
+      height: 70px; /* Stack the input fields vertically for smaller screens */
+    }
+  }
+
+  .warning-icon {
+    height: 15px; /* Set icon height to align with text */
+    margin-right: 10px; /* Space between icon and text */
+    margin-top: 5px;
+  }
+
+  .error-message-text {
+    color: #eb7156; /* Red text color */
+    font-size: 16px;
+    font-weight: 400;
+    text-align: center;
+  }
+}
+
+.title-line-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Space between title and line */
+}
+
+#report-ownership-title {
+  font-family: var(--TypoFamilyRethinkSans);
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: -0.4px;
+  text-align: left;
+  color: #e6eae8;
+}
+
+@media (min-width: 1250px) and (max-width: 1600.99px) {
+  .spider-structure-container {
+    max-width: calc(620px + (100vw - 1250px) * 0.6);
+  }
+}
+
+@media (min-width: 1601px) and (max-width: 2750px) {
+  .spider-structure-container {
+    max-width: calc(620px + (100vw - 1250px) * 0.5);
+  }
+}
+
+.spider-structure-container {
+  margin-top: 45px;
+}
+
+#report-spider-title {
+  font-family: var(--TypoFamilyRethinkSans);
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: -0.4px;
+  text-align: left;
+  color: #e6eae8;
+}
+
+.title-line {
+  margin-top: -25px;
+  flex-grow: 1; /* Fills the remaining space */
+  border: 1px solid #57605c4d; /* Thin line */
+}
+
+.color-scheme-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 columns */
+  grid-gap: 10px; /* Space between items */
+  margin-top: 20px;
+}
+
+.color-scheme-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  // border: 1px solid #57605C; /* Border to define grid items */
+  // border-radius: 5px;
+  // background-color: #2C302E;
+}
+
+.color-box {
+  width: 13px;
+  height: 13px;
+  border-radius: 2px;
+}
+
+.color-label {
+  color: white;
+  font-size: 14px;
+}
+
+.uniqueContainer {
+  border-radius: 4px;
+  background-color: rgba(39, 43, 41, 1);
+  display: flex;
+  max-width: 299px;
+  flex-direction: column;
+  font-family: Satoshi Variable, -apple-system, Roboto, Helvetica, sans-serif;
+  font-weight: 400;
+  justify-content: start;
+  padding: 24px;
+}
+
+.uniqueHeader {
+  display: flex;
+  width: 100%;
+  align-items: start;
+  gap: 40px 51px;
+  font-size: 10px;
+  color: var(--Neutrals-500, #879790);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  line-height: 1.6;
+  justify-content: space-between;
+}
+
+.uniqueParameter {
+  flex: 1;
+}
+
+.uniqueLevel {
+  text-align: right;
+  width: 100px;
+}
+
+.uniqueDivider {
+  min-height: 1px;
+  margin-top: 10px;
+  width: 100%;
+  border: 1px solid rgba(87, 96, 92, 0.3);
+}
+
+.uniqueContent {
+  display: flex;
+  width: 100%;
+  align-items: start;
+  gap: 30px;
+  font-size: 12px;
+  color: var(--Essentials-White, #fff);
+  line-height: 2;
+  justify-content: space-between;
+}
+
+.uniqueParameterList {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  flex: 1;
+}
+
+.uniqueLevelList {
+  display: flex;
+  flex-direction: column;
+  white-space: nowrap;
+  text-align: right;
+}
+
+.uniqueItem {
+  margin-top: 10px;
+}
+
+#investmentgrid {
+  margin-bottom: -1px;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  text-align: left;
+}
+
+#numberinvestmentgrid {
+  margin-left: -20px;
+  margin-bottom: -1px;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  text-align: left;
+}
+
+.combined-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%; /* Adjust as per your layout */
+  gap: 24px; /* Space between the two sections */
+}
+
+.left-section {
+  flex: 1;
+  max-width: 287px;
+}
+
+.right-section {
+  flex: 1;
+  max-width: 287px;
+}
+
+.investment-readiness-container {
+  border-radius: 4px;
+  display: flex;
+  max-width: 287px;
+  flex-direction: column;
+  justify-content: start;
+  padding: 48px 0;
+}
+
+.investment-score-wrapper {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  gap: 12px;
+  font-weight: 400;
+  justify-content: start;
+}
+
+.investment-score-content {
+  align-self: stretch;
+  display: flex;
+  min-width: 240px;
+  flex-direction: column;
+  justify-content: start;
+  flex: 1;
+  margin: auto 0;
+  gap: 10px;
+}
+
+#investment-score-description {
+  color: #879790;
+  font-size: 14px;
+  font-weight: 400;
+  margin-bottom: -1px;
+  text-align: left;
+  margin-top: 20px;
+}
+
+#investment-readiness-score {
+  color: white;
+  font-size: 35px;
+  font-weight: 500;
+  line-height: 40px;
+  text-align: left;
+}
+
+.investment-type {
+  display: flex;
+  margin-top: 24px;
+  width: 100%;
+  flex-direction: column;
+  text-align: center;
+  justify-content: start;
+  font: 400 16px/2 Satoshi Variable, -apple-system, Roboto, Helvetica,
+    sans-serif;
+}
+
+.investment-graph-container {
+  width: 100%;
+  height: 40px; /* Adjust height as needed */
+  background-color: #2c302e; /* Background color for the unfilled portion */
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+}
+
+.investment-graph-fill {
+  height: 100px;
+  background-color: #7041da; /* Fill color */
+  transition: width 0.5s ease-in-out; /* Smooth transition */
+}
+
+#investment-type-text {
+  color: #af94ea;
+  align-self: center;
+  margin-top: 15px;
+}
+
+.investment-ai-powered {
+  border-radius: 4px;
+  background-color: rgba(255, 255, 255, 0.02);
+  display: flex;
+  margin-top: 24px;
+  width: 100%;
+  align-items: center;
+  gap: 12px;
+  justify-content: center;
+  padding: 10px;
+}
+
+.investment-ai-icon-wrapper {
+  border-radius: 4px;
+  align-self: stretch;
+  display: flex;
+  min-height: 36px;
+  align-items: center;
+  gap: 8px;
+  justify-content: center;
+  width: 36px;
+  margin: auto 0;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.investment-ai-icon {
+  aspect-ratio: 1;
+  object-fit: contain;
+  object-position: center;
+  width: 14px;
+  align-self: stretch;
+  margin: auto 0;
+}
+
+#investment-ai-description {
+  color: var(--Neutrals-400, #adb8b3);
+  flex: 1;
+  margin: -1px;
+  font: 400 12px/20px Satoshi Variable, -apple-system, Roboto, Helvetica,
+    sans-serif;
+}

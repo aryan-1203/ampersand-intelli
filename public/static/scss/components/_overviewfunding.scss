@@ -1,0 +1,40 @@
+.of-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 30px;
+}
+
+.of-card {
+  display: flex;
+  padding: 10px 16px;
+  flex-direction: column;
+  align-items: start;
+  flex: 1 0 0;
+  border-radius: 1px;
+  border: 1px solid var(--Neutrals-700, #57605c);
+  background: #1d201f;
+}
+
+#report-h {
+    color: var(--Neutrals-500, #879790);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+}
+
+#report-p {
+    color: #FFF;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+}
+
+.of-card {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  }
+  
+  .of-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 4px 4px 0px 0px #FFF;
+  }
